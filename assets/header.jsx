@@ -15,7 +15,7 @@ const Header =()=>{
 				<Tittle><Link href='/'><a>issonuts</a></Link></Tittle>
 				<ul>
 					<li><a href="#">About</a></li>
-					<li><Link href='/contactme' as='contactme.html'><a>Contact Me</a></Link></li>
+					<li><Link href='/contactme'><a>Contact Me</a></Link></li>
 				</ul>
 
 			</nav>
