@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import styled from 'styled-components';
 
 const Header =()=>{
@@ -8,6 +10,7 @@ const Header =()=>{
 			<nav>
 				<input type="checkbox" id="checkbox"/>
 				<label for="checkbox" className="checkbtn">
+					<FontAwesomeIcon icon={faBars} />
 				</label>
 				<Tittle><Link href='/'><a>issonuts</a></Link></Tittle>
 				<ul>
