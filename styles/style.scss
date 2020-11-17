@@ -1,0 +1,148 @@
+@charset "UtF-8";
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+// モバイルファースト
+$pc: 1024px; // PC
+$tab: 768px; // タブレット
+$sp:767px;
+
+@mixin pc {
+  @media screen and (min-width:($pc)) { 
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (min-width:($tab)) { 
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width:($sp)) { 
+    @content;
+  }
+}
+
+*{
+	list-style: none;
+	text-decoration: none;
+}
+
+html,
+body,
+#__next{
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow-x: hidden;
+
+}
+
+$height:50px;
+$textcolor:#0DF2C9;
+
+nav{
+	background: #267BD9;
+	position: sticky;
+	height: $height;
+	width: 100%;
+	.checkbtn{
+		font-size: 30px;
+		width: 20px;
+		color: #0DF2C9;
+		float: right;
+		line-height: $height;
+		margin-right: 40px;
+		cursor: pointer;
+		display: none;
+		@include sp {
+			display: block;
+		}
+	}
+	#checkbox{
+		display: none;
+	}
+	@include sp {
+		label.logo{
+			font-size: 30px;
+			padding-left: 50px;
+		}
+	}
+	ul{
+		float: right;
+		margin-right: 20px;
+		@include sp {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			background: #267BD9;
+			top: $height;
+			right: -100%;
+			transition: all .5s;
+			text-align: center;
+			margin-right: 0;
+		}
+
+		li{
+			display: inline-block;
+			line-height: $height;
+			margin:0 20px;
+			@include sp {
+				display: block;
+				margin: 100px 0;
+			}
+			a{
+				color: #0DF2C9;
+				font-size: 20px;
+				padding: 7px 13px;
+				border-radius: 3px;
+				position: relative;
+				font-family: 'Abril Fatface', cursive;
+				&::after {
+					position: absolute;
+					bottom: -4px;
+					left: 0;
+					content: '';
+					width: 100%;
+					height: 2px;
+					background: #0DF2C9;
+					transform: scale(0, 1);
+					transform-origin: left top;
+					transition: transform .3s;
+				}
+				&:hover{
+					&::after{
+						transform: scale(1, 1);
+					}
+				}
+				@include sp {
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+}
+
+
+
+#checkbox{
+    &:checked{
+        &~{
+            ul{
+                right: 0;
+            }
+        }
+    }
+}
+
+main{
+	flex: 1;
+	width: 100%;
+	background: #267BD9;
+	margin: 0;
+	display: block;
+	margin-top: -2px;
+	padding-top: 2px;
+}
+

@@ -1,37 +1,30 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import styled from 'styled-components';
+import Footer from '../assets/footer';
 import Header from '../assets/header';
+import styled from 'styled-components';
 
 export default function Home() {
+	
 	return (
 		<MainWrap>
 			<Head>
-				<title>Create Next App</title>
+				<meta content="ホームページ制作、ECサイト構築、EC提案、承ります。" name="description"></meta>
+				<title>issonuts | OFFICAL</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Header />
 
-			<main className={styles.main}>
-				<h1 className={styles.title}>
-					test
-				</h1>
+			<main>
+				<div>test</div>
+				
 			</main>
 
-			<footer className={styles.footer}>
-				<a
-					href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Powered by{' '}
-					<img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-				</a>
-			</footer>
+			<Footer />
 		</MainWrap>
 	)
 }
+
 
 const MainWrap = styled.div`
 	display: flex;
