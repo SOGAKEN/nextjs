@@ -21,4 +21,5 @@ const Foot = styled.footer`
 	justify-content: center;
 	align-items: center;
 	background:#267BD9;
+	color:#fff;
 `;
